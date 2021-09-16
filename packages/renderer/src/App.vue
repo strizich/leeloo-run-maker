@@ -1,31 +1,20 @@
 <template>
-  <img
-    alt="Vue logo"
-    src="../assets/logo.svg"
-    width="300"
-  >
-  <app-navigation />
-  <router-view />
+  <sd-layout>
+    <template #content>
+      <router-view />
+    </template>
+  </sd-layout>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import AppNavigation from '/@/components/AppNavigation.vue';
 export default defineComponent({
   name: 'App',
-  components: {
-    AppNavigation,
-  },
 });
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @use '../assets/fonts/Roboto';
+  @import '../../../node_modules/@strizich/sdui/dist/scss/engine.scss';
+  @import url('../../../node_modules/@strizich/sdui/dist/style.css');
 </style>
